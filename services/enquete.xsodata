@@ -1,0 +1,3 @@
+service namespace "PersoneelsMeeting.services.enquete" {
+    "PersoneelsMeeting.data::enquetes.EnqueteItm" as "EnqueteItm";    
+}

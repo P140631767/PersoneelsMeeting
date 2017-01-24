@@ -1,0 +1,27 @@
+namespace PersoneelsMeeting.data;
+
+@Schema: 'PM'
+context enquetes {
+    type CString : String(5);
+ 	type SString : String(40);
+ 	type LString : String(800);
+ 	type SDate : UTCTimestamp; 
+    type tt_error {
+         HTTP_STATUS_CODE: Integer;
+         ERROR_MESSAGE: String(100);
+         DETAIL: String(200);
+    };
+    type tt_enquete{   
+        ENQUETE_ID: String(10);
+        BNAME: String(12);
+        ANSWER: String(1);
+    };
+ 	
+ 	@Catalog.tableType : #COLUMN
+ 	Entity EnqueteItm {
+        key ENQUETE_ID: String(10);
+        key BNAME: String(12);
+        ANSWER: String(1);
+    };	
+
+}; 

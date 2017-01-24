@@ -1,0 +1,59 @@
+<mvc:View 
+    controllerName="PersoneelsMeeting.enquete.view.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<IconTabBar id="idIconTabBar">
+		<items id="idIconItems">
+			<IconTabFilter id="iconTabFilter1" key="" icon="sap-icon://request">
+				<content>
+					<VBox>
+						<Text text="Hello World"/>
+						<Text text="{User>/name}"/>
+						<RadioButtonGroup id="rbgid" columns="1" select="onRadiobuttonSelect">
+							<RadioButton groupName="GroupA" text="True" tooltip="Ben het er mee eens" key="T"/>
+							<RadioButton groupName="GroupA" text="False" tooltip="Ben het er niet mee eens" key="F"/>
+						</RadioButtonGroup>
+					</VBox>
+				</content>
+			</IconTabFilter>
+			<IconTabFilter id="iconTabFilter2" key="selfInfo" icon="sap-icon://list">
+				<content>
+					<Table 
+		  id="idTable" 
+		  inset="false"
+		  items="{path: 'Table>/EnqueteItm'}" 
+		  title="Table title">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Enquete resultaten" level="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Enquete"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Deelnemer"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Antwoord"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{Table>ENQUETE_ID}"/>
+									<Text text="{Table>BNAME}"/>
+									<Text text="{Table>ANSWER}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</IconTabFilter>
+			<IconTabFilter id="iconTabFilter3" key="" icon="sap-icon://pie-chart">
+				<content></content>
+			</IconTabFilter>
+		</items>
+	</IconTabBar>
+</mvc:View>

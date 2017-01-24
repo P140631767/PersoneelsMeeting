@@ -1,0 +1,7 @@
+import	= 	[ 
+    			{ 
+					cdstable  =	"PersoneelsMeeting.data::enquetes.EnqueteItm";
+					file = "PersoneelsMeeting.data:enquetes.csv"; 	     
+					header = false;		
+    			} 
+     		]; 

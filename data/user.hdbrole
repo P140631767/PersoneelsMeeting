@@ -1,0 +1,8 @@
+role PersoneelsMeeting.data::user
+{
+catalog schema "PM": CREATE ANY, ALTER, DROP, EXECUTE, SELECT, UPDATE, INSERT, DELETE, INDEX, TRIGGER, DEBUG, REFERENCES;
+catalog sql object "PM"."PersoneelsMeeting.data::enquetes.EnqueteItm": //Objecttype: TABLE
+	SELECT, INSERT, UPDATE, DELETE;
+
+
+}
