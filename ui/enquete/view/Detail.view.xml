@@ -1,17 +1,20 @@
 <mvc:View 
     controllerName="PersoneelsMeeting.enquete.view.Detail"
 	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:ma="sap.makit">
+	
 	<IconTabBar id="idIconTabBar">
 		<items id="idIconItems">
 			<IconTabFilter id="iconTabFilter1" key="" icon="sap-icon://request">
 				<content>
 					<VBox>
-						<Text text="Hello World"/>
+						<Text text="Het is vandaag lekker weer"/>
 						<Text text="{User>/name}"/>
 						<RadioButtonGroup id="rbgid" columns="1" select="onRadiobuttonSelect">
-							<RadioButton groupName="GroupA" text="True" tooltip="Ben het er mee eens" key="T"/>
-							<RadioButton groupName="GroupA" text="False" tooltip="Ben het er niet mee eens" key="F"/>
+							<RadioButton groupName="GroupA" text="Mee eens"/>
+							<RadioButton groupName="GroupA" text="Niet mee eens"/>
+							<RadioButton groupName="GroupA" text="Weet het niet"/>
 						</RadioButtonGroup>
 					</VBox>
 				</content>
@@ -52,7 +55,28 @@
 				</content>
 			</IconTabFilter>
 			<IconTabFilter id="iconTabFilter3" key="" icon="sap-icon://pie-chart">
-				<content></content>
+				<content>
+					<ma:Chart id="idChart" height="500px" width="100%" type="Column" rows="{path: 'Table>/EnqueteItm'}" showRangeSelector="true" showTableView="false" showTotalValue="false">
+						<ma:category>
+							<ma:Category column="Enquete" />
+						</ma:category>
+						<ma:values>
+							<ma:Value expression="Antwoord" />
+						</ma:values>
+						<ma:rows>
+							<ma:Row>
+								<ma:cells>
+									<ma:Column name="Enquete" value="{Table>ENQUETE_ID}" />
+									<ma:Column name="Antwoord" value="{Table>ANSWER}"/>
+								</ma:cells>
+							</ma:Row>
+						</ma:rows>
+						<ma:columns>
+							<ma:Column name="Enquete" value="{Table>ENQUETE_ID}" />
+							<ma:Column name="Antwoord" value="{Table>ANSWER}"/>
+						</ma:columns>
+					</ma:Chart>
+				</content>
 			</IconTabFilter>
 		</items>
 	</IconTabBar>
