@@ -21,6 +21,8 @@ sap.ui.controller("PersoneelsMeeting.enquete.view.Detail", {
 		var oTable = this.getView().getModel("Table");
 		var oEntry = this.getView().getModel("Record").getData();
 		var iIndex = oEvent.getParameter("selectedIndex");
+		var oUser = this.getView().getModel("User");
+		oEntry.BNAME = oUser.getProperty("/name");
 		oEntry.ANSWER = JSON.stringify(iIndex);
 
 		oTable.setHeaders({
@@ -30,7 +32,12 @@ sap.ui.controller("PersoneelsMeeting.enquete.view.Detail", {
 		oTable.create('/EnqueteItm', oEntry, null, function() {
 			alert("Create successful");
 		}, function() {
-			alert("Create failed");
+			oTable.update("/EnqueteItm(ENQUETE_ID='3',BNAME='" + oEntry.BNAME + "')", oEntry, null, function() {
+			alert("Update successful");
+			}, function() {
+				
+				alert("Update failed");
+			});
 		});
 	}
 });
