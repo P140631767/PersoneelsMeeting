@@ -20,11 +20,10 @@
       "description": "SAPUI5 Test Resources"
     },
    {
-     "path": "/services", 
+     "path": "/services/userapi", 
      "target": {
-       "type": "destination",
-       "name": "S4D",
-       "entryPath": "/services"
+       "type": "service",
+       "name": "userapi"
      }
   },
    {
