@@ -9,7 +9,7 @@
 			<IconTabFilter id="iconTabFilter1" key="" icon="sap-icon://request">
 				<content>
 					<VBox>
-						<Text text="Van hartelijk welkom, {User>/firstName} {User>/lastName}"/>
+						<Text text="Welkom, {User>/firstName} {User>/lastName}"/>
 						<RadioButtonGroup id="rbgid" columns="1" select="onRadiobuttonSelect">
 							<RadioButton groupName="GroupA" text="Mee eens"/>
 							<RadioButton groupName="GroupA" text="Niet mee eens"/>
